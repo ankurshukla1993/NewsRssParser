@@ -1,28 +1,19 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repo is parsing RSS feeds for Times of India. There are various categories of news RSS Feeds. All are listed in /app/services/new_parser.rb
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version - 2.0.0 (You can use either this version or anything greater than 2.4)
 
-* System dependencies
+* System dependencies (Should have ruby rails and rvm installed)
 
-* Configuration
+* Configuration - bundle install
 
-* Database creation
+* Database creation - rake db:create
 
-* Database initialization
+* Database initialization - rake db:migrate
 
-* How to run the test suite
+* How to run the server - rails s
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.

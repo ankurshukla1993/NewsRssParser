@@ -5,16 +5,25 @@ class HomesController < ApplicationController
   # GET /homes.json
   def index
     #@homes = Home.all
-    @top_stories = NewParser.top_story_parsing
-    @india_top_stories = NewParser.india_top_stories
-    @world_top_stories = NewParser.world_top_stories
-    @nri_top_stories = NewParser.nri_top_stories
-    @business_top_stories = NewParser.business_top_stories
-    @cricket_top_stories = NewParser.cricket_top_stories
-    @sports_top_stories = NewParser.sports_top_stories
-    @health_top_stories = NewParser.health_top_stories
-    @science_top_stories = NewParser.science_top_stories
-    @environment_top_stories = NewParser.environment_top_stories
+    @top_stories = TimesOfIndiaParser.top_story_parsing
+    @india_top_stories = TimesOfIndiaParser.india_top_stories
+    @world_top_stories = TimesOfIndiaParser.world_top_stories
+    @nri_top_stories = TimesOfIndiaParser.nri_top_stories
+    @business_top_stories = TimesOfIndiaParser.business_top_stories
+    @cricket_top_stories = TimesOfIndiaParser.cricket_top_stories
+    @sports_top_stories = TimesOfIndiaParser.sports_top_stories
+    @health_top_stories = TimesOfIndiaParser.health_top_stories
+    @science_top_stories = TimesOfIndiaParser.science_top_stories
+    @environment_top_stories = TimesOfIndiaParser.environment_top_stories
+    @tech_top_stories = TimesOfIndiaParser.tech_top_stories
+    @education_top_stories = TimesOfIndiaParser.education_top_stories
+    @sundaytoi_top_stories = TimesOfIndiaParser.sundaytoi_top_stories
+    @opinion_top_stories = TimesOfIndiaParser.opinion_top_stories
+    @entertainment_top_stories = TimesOfIndiaParser.entertainment_top_stories
+    @lifeandstyle_top_stories = TimesOfIndiaParser.lifeandstyle_top_stories
+    @mostread_top_stories = TimesOfIndiaParser.mostread_top_stories
+    @mostshared_top_stories = TimesOfIndiaParser.mostshared_top_stories
+    @mostcommented_top_stories = TimesOfIndiaParser.mostcommented_top_stories
   end
 
   # GET /homes/1

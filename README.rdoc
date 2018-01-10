@@ -1,6 +1,6 @@
 == README
 
-This repo is parsing RSS feeds for Times of India. There are various categories of news RSS Feeds. All are listed in /app/services/new_parser.rb
+This repo is parsing RSS feeds for Times of India. There are various categories of news RSS Feeds. All are listed in /app/services/times_of_india_parser.rb
 
 Things you may want to cover:
 

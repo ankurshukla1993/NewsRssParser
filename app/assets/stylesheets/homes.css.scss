@@ -1,0 +1,70 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+// Hyperlink stylings
+a:visited {
+    color: #968e8e !important;
+}
+
+a {
+    color: #5b0101 !important;
+}
+
+a:link {
+    text-decoration:none; 
+}
+
+a:hover {
+	background-color: transparent !important;
+	text-decoration: underline;
+}
+
+// Hyperlink styling ends
+
+
+// Top story stylings
+.top-story-section-heading {
+	text-align: center;
+	margin-top: 35px;
+	color: #8e1919;
+}
+
+.india-top-story-section-heading {
+	text-align: center;
+	margin-top: 70px;
+	color: #8e1919;
+}
+
+.top-story-card {
+	margin: auto;
+	width: 1000px;
+	height: max-content;
+	box-shadow: -8px 6px 18px -7px rgba(0,0,0,1);
+	margin-top: 25px;
+	margin-bottom: 25px;
+	margin-right: 15px;
+	padding: 15px;
+	border-radius: 10px;
+	background: #f7f4f4;
+}
+
+.top-story-card-title {
+	float: left;
+	width: 900px;
+	font-size: 20px;
+	color: #70a8d8;
+}
+
+.top-story-card-full-story-link {
+	float: left;
+	width: 100px;
+}
+
+.top-story-card-description {
+	margin-top: 40px;
+}
+
+// Top story styling ends

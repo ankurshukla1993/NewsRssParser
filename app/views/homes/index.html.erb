@@ -1,0 +1,143 @@
+<h1 class="top-story-section-heading">Top Stories</h1>
+
+<div class="main-gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+
+<% @top_stories.each do |story| %>
+
+  <div class= "top-story-card">
+    <div class="top-story-card-title"><%= story[:title] %></div>
+    <div class="top-story-card-full-story-link"><%= link_to 'Full Story', story[:link], target: :_blank %></div>
+    <div class="top-story-card-description"><%= story[:description]%></div>
+  </div>
+
+<% end %>
+
+</div>
+
+<h1 class="india-top-story-section-heading">Stories from India</h1>
+
+<div class="main-gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+
+<% @india_top_stories.each do |story| %>
+  <div class= "top-story-card">
+    <div class="top-story-card-title"><%= story[:title] %></div>
+    <div class="top-story-card-full-story-link"><%= link_to 'Full Story', story[:link], target: :_blank %></div>
+    <div class="top-story-card-description"><%= story[:description].html_safe %></div>
+  </div>
+<% end %>
+
+</div>
+
+<h1 class="india-top-story-section-heading">Stories from World</h1>
+
+<div class="main-gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+
+<% @world_top_stories.each do |story| %>
+  <div class= "top-story-card">
+    <div class="top-story-card-title"><%= story[:title] %></div>
+    <div class="top-story-card-full-story-link"><%= link_to 'Full Story', story[:link], target: :_blank %></div>
+    <div class="top-story-card-description"><%= story[:description].html_safe %></div>
+  </div>
+<% end %>
+
+</div>
+
+
+<h1 class="india-top-story-section-heading">Stories from NRI</h1>
+
+<div class="main-gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+
+<% @nri_top_stories.each do |story| %>
+  <div class= "top-story-card">
+    <div class="top-story-card-title"><%= story[:title] %></div>
+    <div class="top-story-card-full-story-link"><%= link_to 'Full Story', story[:link], target: :_blank %></div>
+    <div class="top-story-card-description"><%= story[:description].html_safe %></div>
+  </div>
+<% end %>
+
+</div>
+
+<h1 class="india-top-story-section-heading">Stories from Business</h1>
+
+<div class="main-gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+
+<% @business_top_stories.each do |story| %>
+  <div class= "top-story-card">
+    <div class="top-story-card-title"><%= story[:title] %></div>
+    <div class="top-story-card-full-story-link"><%= link_to 'Full Story', story[:link], target: :_blank %></div>
+    <div class="top-story-card-description"><%= story[:description].html_safe %></div>
+  </div>
+<% end %>
+
+</div>
+
+<h1 class="india-top-story-section-heading">Stories from Cricket</h1>
+
+<div class="main-gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+
+<% @cricket_top_stories.each do |story| %>
+  <div class= "top-story-card">
+    <div class="top-story-card-title"><%= story[:title] %></div>
+    <div class="top-story-card-full-story-link"><%= link_to 'Full Story', story[:link], target: :_blank %></div>
+    <div class="top-story-card-description"><%= story[:description].html_safe %></div>
+  </div>
+<% end %>
+
+</div>
+
+<h1 class="india-top-story-section-heading">Stories from Sports</h1>
+
+<div class="main-gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+
+<% @sports_top_stories.each do |story| %>
+  <div class= "top-story-card">
+    <div class="top-story-card-title"><%= story[:title] %></div>
+    <div class="top-story-card-full-story-link"><%= link_to 'Full Story', story[:link], target: :_blank %></div>
+    <div class="top-story-card-description"><%= story[:description].html_safe %></div>
+  </div>
+<% end %>
+
+</div>
+
+<h1 class="india-top-story-section-heading">Stories from Health</h1>
+
+<div class="main-gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+
+<% @health_top_stories.each do |story| %>
+  <div class= "top-story-card">
+    <div class="top-story-card-title"><%= story[:title] %></div>
+    <div class="top-story-card-full-story-link"><%= link_to 'Full Story', story[:link], target: :_blank %></div>
+    <div class="top-story-card-description"><%= story[:description].html_safe %></div>
+  </div>
+<% end %>
+
+</div>
+
+<h1 class="india-top-story-section-heading">Stories from Science</h1>
+
+<div class="main-gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+
+<% @science_top_stories.each do |story| %>
+  <div class= "top-story-card">
+    <div class="top-story-card-title"><%= story[:title] %></div>
+    <div class="top-story-card-full-story-link"><%= link_to 'Full Story', story[:link], target: :_blank %></div>
+    <div class="top-story-card-description"><%= story[:description].html_safe %></div>
+  </div>
+<% end %>
+
+</div>
+
+<h1 class="india-top-story-section-heading">Stories from Environment</h1>
+
+<div class="main-gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+
+<% @environment_top_stories.each do |story| %>
+  <div class= "top-story-card">
+    <div class="top-story-card-title"><%= story[:title] %></div>
+    <div class="top-story-card-full-story-link"><%= link_to 'Full Story', story[:link], target: :_blank %></div>
+    <div class="top-story-card-description"><%= story[:description].html_safe %></div>
+  </div>
+<% end %>
+
+</div>
+

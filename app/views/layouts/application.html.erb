@@ -3,12 +3,22 @@
 <head>
   <title>News Feeds</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <!-- Bootstrap css -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  
+  <!-- Bootstrp JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+	<%= render '/layouts/header' %>
+  <!-- <div id="left"></div>
+  <div id="right"> -->
+      <%= yield %>
+  <!-- </div> -->
+	
 
 </body>
 </html>

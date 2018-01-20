@@ -5,6 +5,7 @@ class HomesController < ApplicationController
   # GET /homes.json
   def index
     @all_stories = TimesOfIndiaParser.parse_all
+    # @all_stories = TheHinduParser.parse_all
   end
 
   # GET /homes/1

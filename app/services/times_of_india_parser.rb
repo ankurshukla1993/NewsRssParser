@@ -33,9 +33,18 @@ class TimesOfIndiaParser < BaseService
     CATEGORY_URLS.each do |category_url|
       rss_results[category_url[0].to_s.humanize] = []
       rss = RSS::Parser.parse(open(category_url[1]).read, false).items
-      rss.each do |result|
-        result = { title: result.title, date: result.pubDate, link: result.link, description: ActionView::Base.full_sanitizer.sanitize(result.description) }
-        puts category_url[0].to_s.humanize + " => " + result.to_s
+      rss.each do |each_rss_result|
+        result = { title: each_rss_result.title, 
+                   date: each_rss_result.pubDate, 
+                   link: each_rss_result.link, 
+                   description: ActionView::Base.full_sanitizer.sanitize(each_rss_result.description) }
+        # result = { title: each_rss_result.title, date: each_rss_result.pubDate, link: each_rss_result.link, description: each_rss_result.description }
+
+        # if each_rss_result.description.include? "</a>"
+        #   description_array = each_rss_result.description.split("</a>")
+        #   result.merge!(image_tag: description_array[0])
+        # end
+        # puts category_url[0].to_s.humanize + " => " + result.to_s
         rss_results[category_url[0].to_s.humanize].push(result)
       end
     end

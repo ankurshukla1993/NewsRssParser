@@ -10,7 +10,8 @@
         </div>
         <div class="clear">&nbsp;</div>
         <div class="published-at-text">Published at: <%= each_story[:date].strftime('%c') %></div>
-        <div class="top-story-card-description"><%= each_story[:description]%></div>
+        <div class="top-story-card-description"><%= each_story[:description] %></div>
+        <!-- <div class="top-story-card-description"><%# if !each_story[:image_tag].nil? %><%#= each_story[:image_tag].html_safe %> <%# end %></div> -->
       </div>
     <% end %>
   </div>

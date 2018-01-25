@@ -19,6 +19,7 @@ class TheHinduParser < BaseService
       rss = RSS::Parser.parse(open(category_url[1]).read, false).items
       rss.each do |result|
         result = { title: result.title, date: result.pubDate, link: result.link, description: ActionView::Base.full_sanitizer.sanitize(result.description) }
+        # result = { title: result.title, date: result.pubDate, link: result.link, description: result.description }
         puts category_url[0].to_s.humanize + " => " + result.to_s
         rss_results[category_url[0].to_s.humanize].push(result)
       end

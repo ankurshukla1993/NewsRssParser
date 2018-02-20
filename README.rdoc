@@ -8,12 +8,12 @@ Things you may want to cover:
 
 * System dependencies (Should have ruby rails and rvm installed)
 
-* Configuration - bundle install
+* Configuration - Use command "bundle install" after fetching the codebase. If the error is "bundle not found", run command "sudo gem install bundler"
 
-* Database creation - rake db:create
+* Database creation - "rake db:create" to create database, currently mysql is used, if you want to change database change it in database.yml, also update your database credentials there.
 
-* Database initialization - rake db:migrate
+* Database initialization - "rake db:migrate", to migrate the database.
 
-* How to run the server - rails s
+* How to run the server - "rails s", to start the server.
 
-<tt>rake doc:app</tt>.
+* How to run the service. hit "localhost:3000" to get the news feeds of TOI, you can change the newspaper brand from homes_controller.rb

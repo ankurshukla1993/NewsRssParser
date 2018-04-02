@@ -1,6 +1,6 @@
 
 <% @all_stories.each do |story| %>
-  <h1 class="top-story-section-heading"><%= story[0] %></h1>
+  <h1 class="top-story-section-heading"><%= story[0].humanize %></h1>
   <div class="main-gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
     <% story[1].each do |each_story| %>
       <div class= "top-story-card">
@@ -9,7 +9,7 @@
           <div class="top-story-card-full-story-link"><%= link_to 'Full Story', each_story[:link], target: :_blank %></div>
         </div>
         <div class="clear">&nbsp;</div>
-        <div class="published-at-text">Published at: <%= each_story[:date].strftime('%c') %></div>
+        <div class="published-at-text">Published at: <%= each_story[:publishing_date].strftime('%c') %></div>
         <div class="top-story-card-description"><%= each_story[:description] %></div>
         <!-- <div class="top-story-card-description"><%# if !each_story[:image_tag].nil? %><%#= each_story[:image_tag].html_safe %> <%# end %></div> -->
       </div>

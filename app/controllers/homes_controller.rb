@@ -4,7 +4,8 @@ class HomesController < ApplicationController
   # GET /homes
   # GET /homes.json
   def index
-    @all_stories = TimesOfIndiaParser.parse_all
+    # @all_stories = TimesOfIndiaParser.parse_all
+    @all_stories = NewsFeed.all.group_by(&:tag)
     # @all_stories = TheHinduParser.parse_all
   end
 

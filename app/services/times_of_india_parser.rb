@@ -75,7 +75,8 @@ class TimesOfIndiaParser < BaseService
   def self.parse_all
 
     rss_results = {}
-    all_urls = CATEGORY_URLS.merge(CITY_URLS).merge(WORLD_URLS)
+    all_urls = {}
+    all_urls = all_urls.merge(CATEGORY_URLS).merge(CITY_URLS).merge(WORLD_URLS)
     all_urls.each do |category_url|
       rss_results[category_url[0].to_s.humanize] = []
       rss = RSS::Parser.parse(open(category_url[1]).read, false).items
@@ -83,8 +84,14 @@ class TimesOfIndiaParser < BaseService
         result = { title: each_rss_result.title, 
                    date: each_rss_result.pubDate, 
                    link: each_rss_result.link, 
-                   description: ActionView::Base.full_sanitizer.sanitize(each_rss_result.description) }
+                   description: ActionView::Base.full_sanitizer.sanitize(each_rss_result.description)
+                 }
         rss_results[category_url[0].to_s.humanize].push(result)
+        NewsFeed.create!(:title => each_rss_result.title, 
+                         :publishing_date => each_rss_result.pubDate, 
+                         :link => each_rss_result.link, 
+                         :description => ActionView::Base.full_sanitizer.sanitize(each_rss_result.description),
+                          :tag => category_url[0].to_s)
       end
     end
     rss_results

@@ -79,19 +79,31 @@ class TimesOfIndiaParser < BaseService
     all_urls = all_urls.merge(CATEGORY_URLS).merge(CITY_URLS).merge(WORLD_URLS)
     all_urls.each do |category_url|
       rss_results[category_url[0].to_s.humanize] = []
-      rss = RSS::Parser.parse(open(category_url[1]).read, false).items
-      rss.each do |each_rss_result|
-        result = { title: each_rss_result.title, 
-                   date: each_rss_result.pubDate, 
-                   link: each_rss_result.link, 
-                   description: ActionView::Base.full_sanitizer.sanitize(each_rss_result.description)
-                 }
-        rss_results[category_url[0].to_s.humanize].push(result)
-        NewsFeed.create!(:title => each_rss_result.title, 
-                         :publishing_date => each_rss_result.pubDate, 
-                         :link => each_rss_result.link, 
-                         :description => ActionView::Base.full_sanitizer.sanitize(each_rss_result.description),
-                          :tag => category_url[0].to_s)
+      begin
+        rss = RSS::Parser.parse(open(category_url[1]).read, false).items
+      rescue ArgumentError => e
+        puts e
+      end
+      if !rss.nil?
+        rss.each do |each_rss_result|
+          result = { title: each_rss_result.title, 
+                     date: each_rss_result.pubDate, 
+                     link: each_rss_result.link, 
+                     description: ActionView::Base.full_sanitizer.sanitize(each_rss_result.description)
+                   }
+          rss_results[category_url[0].to_s.humanize].push(result)
+          begin
+            NewsFeed.create!(:title => each_rss_result.title, 
+                             :publishing_date => each_rss_result.pubDate, 
+                             :link => each_rss_result.link, 
+                             :description => ActionView::Base.full_sanitizer.sanitize(each_rss_result.description),
+                             :tag => category_url[0].to_s)
+          rescue StandardError => e
+            puts e
+          rescue => e
+            puts e
+          end
+        end
       end
     end
     rss_results

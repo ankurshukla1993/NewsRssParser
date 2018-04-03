@@ -5,7 +5,7 @@ class HomesController < ApplicationController
   # GET /homes.json
   def index
     # @all_stories = TimesOfIndiaParser.parse_all
-    @all_stories = NewsFeed.all.group_by(&:tag)
+    @all_stories = NewsFeed.all.where("created_at > ?", Time.now - 1.day).group_by(&:tag)
     # @all_stories = TheHinduParser.parse_all
   end
 
